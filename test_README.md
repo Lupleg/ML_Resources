@@ -1,6 +1,6 @@
 ## Unit Test Case
 
-### Test Scenario 1: @Lupleg-dev
+### Test Scenario 1: 
 
 **Test Description:** Verify that the functionality works as expected.
 
