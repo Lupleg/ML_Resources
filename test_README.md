@@ -2,12 +2,12 @@
 
 ### Test Scenario 1: @Lupleg-dev
 
-**Test Description:** Verify that the @Lupleg-dev functionality works as expected.
+**Test Description:** Verify that the functionality works as expected.
 
 **Test Steps:**
 
 1. Set up the necessary test environment.
-2. Call the @Lupleg-dev function.
+2. Call the function.
 3. Verify the expected output.
 
 **Test Data:**
@@ -17,7 +17,7 @@
 
 **Test Result:**
 
-- The @Lupleg-dev function returned the expected output.
+- The function returned the expected output.
 
 ### Test Scenario 2: [Add more test scenarios if needed]
 
