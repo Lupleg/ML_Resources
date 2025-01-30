@@ -1,3 +1,7 @@
+Using useEffect to Fetch Data
+Question: Create a React component that fetches data from a public API (https://jsonplaceholder.typicode.com/posts) and displays the first post's title. Use the useEffect hook to fetch the data when the component mounts.
+Hint: You may use fetch() to get the data, and store it in state.
+
 ```
 import React, { useState, useEffect } from 'react';
 
