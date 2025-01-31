@@ -1,117 +1,36 @@
-Got it! Here are more practical questions with coding examples for React hooks:
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 1. Using useState to Toggle a Button
+## Getting Started
 
-Question: Write a simple React component that toggles a button's text between "ON" and "OFF" each time it's clicked using the useState hook.
-Hint: You'll need to maintain a state variable that tracks whether the button is on or off.
-jsx
-Copy
-import React, { useState } from 'react';
+First, run the development server:
 
-const ToggleButton = () => {
-const [isOn, setIsOn] = useState(false);
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-const toggleButton = () => setIsOn(!isOn);
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-return (
-<button onClick={toggleButton}>
-{isOn ? 'ON' : 'OFF'}
-</button>
-);
-};
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-export default ToggleButton; 2. Using useEffect to Fetch Data
-Question: Create a React component that fetches data from a public API (https://jsonplaceholder.typicode.com/posts) and displays the first post's title. Use the useEffect hook to fetch the data when the component mounts.
-Hint: You may use fetch() to get the data, and store it in state.
-jsx
-Copy
-import React, { useState, useEffect } from 'react';
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-const FetchData = () => {
-const [post, setPost] = useState(null);
+## Learn More
 
-useEffect(() => {
-fetch('https://jsonplaceholder.typicode.com/posts/1')
-.then((response) => response.json())
-.then((data) => setPost(data));
-}, []);
+To learn more about Next.js, take a look at the following resources:
 
-return (
-<div>
-{post ? (
-<h1>{post.title}</h1>
-) : (
-<p>Loading...</p>
-)}
-</div>
-);
-};
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-export default FetchData; 3. Using useContext to Share State
-Question: Create a context to manage a user's theme (either "light" or "dark"). Use useContext to allow child components to access the current theme and update it from a button in the parent component.
-Hint: You'll need to create a context provider and consumer, then use useContext to consume the current theme.
-jsx
-Copy
-import React, { createContext, useState, useContext } from 'react';
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-// Create Context
-const ThemeContext = createContext();
+## Deploy on Vercel
 
-const ThemeProvider = ({ children }) => {
-const [theme, setTheme] = useState('light');
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-const toggleTheme = () => setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-
-return (
-<ThemeContext.Provider value={{ theme, toggleTheme }}>
-{children}
-</ThemeContext.Provider>
-);
-};
-
-const ThemeButton = () => {
-const { theme, toggleTheme } = useContext(ThemeContext);
-
-return (
-<div>
-<p>Current theme: {theme}</p>
-<button onClick={toggleTheme}>Toggle Theme</button>
-</div>
-);
-};
-
-const App = () => (
-<ThemeProvider>
-<ThemeButton />
-</ThemeProvider>
-);
-
-export default App; 4. Using useRef to Track Previous State
-Question: Use the useRef hook to track the previous value of a counter (e.g., if the counter goes from 2 to 3, you should be able to display "Previous: 2" and "Current: 3").
-Hint: useRef doesn't cause re-renders, so it's perfect for storing the previous value.
-jsx
-Copy
-import React, { useState, useEffect, useRef } from 'react';
-
-const Counter = () => {
-const [count, setCount] = useState(0);
-const prevCountRef = useRef();
-
-// Update the ref value to track previous count after render
-useEffect(() => {
-prevCountRef.current = count;
-}, [count]);
-
-const prevCount = prevCountRef.current;
-
-return (
-<div>
-<p>Previous count: {prevCount}</p>
-<p>Current count: {count}</p>
-<button onClick={() => setCount(count + 1)}>Increment</button>
-</div>
-);
-};
-
-export default Counter;
-These examples should give you a solid understanding of how to work with React hooks in real-world scenarios! Let me know if you'd like further explanations.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
