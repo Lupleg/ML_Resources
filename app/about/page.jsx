@@ -4,6 +4,9 @@ import React, { useState } from "react";
 export default function AboutPage() {
   const [count, setCount] = useState(100);
 
+  
+
+  console.log(count);
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h2 className="text-4xl">About us</h2>
@@ -19,6 +22,8 @@ export default function AboutPage() {
         {" "}
         Counted{" "}
       </button>
+
+
     </div>
   );
 }
